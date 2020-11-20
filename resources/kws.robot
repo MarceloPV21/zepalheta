@@ -40,3 +40,10 @@ Then I should see the notification:
     [Arguments]         ${expect_notice}
 
     Wait Until Element Contains     ${TOASTER_SUCESS}    ${expect_notice}    5
+
+Then I should see messages informing that register client fields are required
+
+    Wait Until Page Contains        Nome é obrigatório              5
+    Wait Until Page Contains        CPF é obrigatório               5
+    Wait Until Page Contains        Endereço é obrigatório          5
+    Wait Until Page Contains        Telefone é obrigatório          5
