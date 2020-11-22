@@ -4,9 +4,10 @@ Documentation       Clients Register
 
 Resource        ../resources/base.robot
 
-Test Setup          Login Session
+Suite Setup          Login Session
 
-Test Teardown       Finish Session
+Suite Teardown       Finish Session
+
 
 
 ***Test Cases***
@@ -17,11 +18,42 @@ New Clients
     ...     Bon Jovi    01317898214      Bug Street,1000     00000000001
     Then I should see the notification:     Cliente cadastrado com sucesso!
 
-Required fields
-    [tags]   temp
+Required Fields
     Given I access the customer registration form
     When I include this client
-    ...     ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
-    Then I should see messages informing that register client fields are required
+    ...     ${EMPTY}     ${EMPTY}        ${EMPTY}       ${EMPTY}  
+    Then I should see the notification:     Cliente cadastrado com sucesso!
+
+Name is Required
+    [Tags]      required
+    [Template]      Fields Validation
+    ${EMPTY}        01317898756    56          36413755    Nome é obrigatório
+
+Cpf is Required
+    [Tags]      required
+    [Template]      Fields Validation
+    Marcelo         ${EMPTY}       56          36413755    CPF é obrigatório
+
+Adress is Required
+    [Tags]      required
+    [Template]      Fields Validation
+    Marcelo             01317898756    ${EMPTY}    36413755    Endereço é obrigatório
+
+Phone is Required
+    [Tags]      required
+    [Template]      Fields Validation
+    Marcelo             01317898756    56          ${EMPTY}    Telefone é obrigatório
+
+***Keywords***
+
+Fields Validation
+    [Arguments]     ${name}     ${cpf}     ${adress}     ${phone}       ${text}
+    
+    Given I access the customer registration form
+    When I include this client
+    ...     ${name}     ${cpf}     ${adress}     ${phone}
+    Then I should see a text:    ${text}
+
+
 
 

@@ -47,3 +47,9 @@ Then I should see messages informing that register client fields are required
     Wait Until Page Contains        CPF é obrigatório               5
     Wait Until Page Contains        Endereço é obrigatório          5
     Wait Until Page Contains        Telefone é obrigatório          5
+
+Then I should see a text:
+
+    [Arguments]     ${expect_text}
+
+    Wait Until Page Contains     ${expect_text}     5
