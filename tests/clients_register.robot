@@ -44,6 +44,11 @@ Phone is Required
     [Template]      Fields Validation
     Marcelo             01317898756    56          ${EMPTY}    Telefone é obrigatório
 
+Incorrect Phone
+    [Tags]      required
+    [Template]      Fields Validation
+    Marcelo             01317898245     56          3641554656      Telefone inválido       
+
 ***Keywords***
 
 Fields Validation
