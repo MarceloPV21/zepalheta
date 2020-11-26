@@ -14,14 +14,26 @@ Suite Teardown       Finish Session
 
 New Clients
     Given I access the customer registration form
-    When I include this client
+    And that I have the following client
     ...     Bon Jovi    01317898214      Bug Street,1000     00000000001
+    When I include this client
     Then I should see the notification:     Cliente cadastrado com sucesso!
+
+Duplicate Clients
+    [Tags]      dup
+    Given I access the customer registration form
+    And that I have the following client
+    ...     Adrian Smith    01317898111      Bug Street,1000     00000000001
+    But this CPF already exists
+    When I include this client
+    Then I should see the error notification:     Este CPF já existe no sistema!
+
 
 Required Fields
     Given I access the customer registration form
-    When I include this client
+    And that I have the following client
     ...     ${EMPTY}     ${EMPTY}        ${EMPTY}       ${EMPTY}  
+    When I include this client
     Then I should see the notification:     Cliente cadastrado com sucesso!
 
 Name is Required
@@ -55,8 +67,9 @@ Fields Validation
     [Arguments]     ${name}     ${cpf}     ${adress}     ${phone}       ${text}
     
     Given I access the customer registration form
-    When I include this client
+    And that I have the following client
     ...     ${name}     ${cpf}     ${adress}     ${phone}
+    When I include this client
     Then I should see a text:    ${text}
 
 
