@@ -10,6 +10,7 @@ Library     libs/db.py
 Resource    pages/LoginPage.robot
 Resource    pages/CustomersPage.robot
 
+
 Resource    components/Sidebar.robot
 Resource    components/Toaster.robot
 

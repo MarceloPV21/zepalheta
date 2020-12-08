@@ -23,8 +23,7 @@ Should I see a toaster with a message
 #Customer
 
 Given I access the customer registration form
-    Wait Until Element Is Visible       ${NAV_CUSTOMERS}      5
-    Click Element                       ${NAV_CUSTOMERS}
+    Go to customers
     Wait Until Element Is Visible       ${CUSTOMERS_FORM}     5
     Click Element                       ${CUSTOMERS_FORM}
 
@@ -71,3 +70,35 @@ Then I should see a text:
     [Arguments]     ${expect_text}
 
     Wait Until Page Contains     ${expect_text}     5
+
+And this customer should be displayed on list
+
+    ${formatted_cpf} =      Format Cpf      ${cpf}
+    Go Back
+    Wait Until Element Is Visible   ${CUSTOMER_LIST} 
+    Table Should Contain            ${CUSTOMER_LIST}        ${formatted_cpf}
+
+#Remove Customer
+
+Given that I have an unwanted customer
+    [Arguments]     ${name}     ${cpf}     ${adress}     ${phone_number}
+    Remove Customer By cpf      ${cpf}
+    Insert Customer  ${name}     ${cpf}     ${adress}     ${phone_number}   
+
+    Set Test Variable       ${cpf}
+
+And access to customer list
+
+    Go to customers
+
+When I remove this customer
+
+    ${formatted_cpf}=      Format Cpf          ${cpf}
+    Set Test Variable       ${formatted_cpf}
+
+    Go to customer details  ${formatted_cpf}
+    Click remove customer
+
+And this customer should not appear on list
+
+    Wait Until Page Does Not Contain   ${formatted_cpf}       

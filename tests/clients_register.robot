@@ -13,11 +13,13 @@ Suite Teardown       Finish Session
 ***Test Cases***
 
 New Clients
+    [Tags]      smoke
     Given I access the customer registration form
     And that I have the following client
     ...     Bon Jovi    01317898214      Bug Street,1000     00000000001
     When I include this client
     Then I should see the notification:     Cliente cadastrado com sucesso!
+    And this customer should be displayed on list
 
 Duplicate Clients
     [Tags]      dup
