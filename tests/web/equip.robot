@@ -1,7 +1,7 @@
 ***Settings***
 Documentation       Equipaments
 
-Resource        ../resources/base.robot
+Resource        ../../resources/base.robot
 
 Suite Setup          Start Session
 

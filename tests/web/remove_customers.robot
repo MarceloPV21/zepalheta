@@ -1,7 +1,7 @@
 ***Settings***
 Documentation       Remove Customers
 
-Resource        ../resources/base.robot
+Resource        ../../resources/base.robot
 
 Suite Setup          Login Session
 
