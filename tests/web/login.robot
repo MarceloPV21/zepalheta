@@ -1,11 +1,9 @@
 ***Settings***
 Documentation       Login
 
-Resource        ../resources/base.robot
+Resource        ../../resources/base.robot
 
-
-
-Suite Setup          Start Session
+Suite Setup          Login Session
 
 Suite Teardown       Finish Session
 

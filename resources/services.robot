@@ -4,6 +4,8 @@ Documentation       Service Layer of automation project
 
 Library             RequestsLibrary
 
+Resource            helpers.robot
+
 ***Variables***
 ${base_api_url}=    http://zepalheta-api:3333
 

@@ -2,10 +2,13 @@
 
 Resource        ../../resources/services.robot
 
+
+
 ***Test Cases***
 New Customer
     
-    &{payload}=         Create Dictionary       name=Flea   cpf=777.777.777-77  address=Bug Street,200   phone_number=92982705014
+
+    ${payload}          Get Json    /flea.json
 
     Delete Customer     ${payload['cpf']}
 

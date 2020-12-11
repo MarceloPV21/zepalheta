@@ -2,7 +2,7 @@
 
 Documentation       Clients Register
 
-Resource        ../../resources/base.robot
+Resource            ../../resources/base.robot
 
 Suite Setup          Login Session
 

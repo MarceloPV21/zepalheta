@@ -1,9 +1,9 @@
 ***Settings***
 Documentation       Login Attempt
 
-Resource        ../resources/base.robot
+Resource        ../../resources/base.robot
 
-Suite Setup          Start Session
+Suite Setup          Login Session
 #Execute one or more Keywords after execution of all steps of each test case
 Suite Teardown       Finish Session
 
