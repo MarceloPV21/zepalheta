@@ -1,10 +1,5 @@
-datasources:e3afa240b62a9ad8806a5a8100688d6e6868b550
+datasources:7e8aaa23013c59686e797e7dd7628a867ef7f0fc
 commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
 suitesfrom:no-suites-from-option
-file:672f67657d32363e161c67901b2718718168bebc
---suite Tests.Api.Customers
---suite Tests.Api.Login
---suite Tests.Web.Clients Register
---suite Tests.Web.Login
---suite Tests.Web.Login Attempt
---suite Tests.Web.Remove Customers
+file:782ade73d9dceaefeaa0653b2069bd9e9fef3351
+--suite Get Customers

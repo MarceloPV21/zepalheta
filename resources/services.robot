@@ -3,6 +3,7 @@
 Documentation       Service Layer of automation project
 
 Library             RequestsLibrary
+Library             Collections
 
 Resource            helpers.robot
 
@@ -39,6 +40,41 @@ Post Customer
 
     [return]            ${resp}
 
+Put Customer
+    [Arguments]     ${payload}  ${user_id}
+
+    Create Session  ze-api                  ${base_api_url}
+
+    ${token}=           Get Session Token
+    &{headers}=         Create Dictionary       content-type=application/json   authorization=${token}
+    
+    ${resp}=            Put Request    ze-api      /customers/${user_id}      data=${payload}     headers=${headers}
+
+    [return]            ${resp}
+
+Get Customer
+    Create Session      zp-api      ${base_api_url}
+
+    ${token}=       Get Session Token       
+    &{headers}=     Create Dictionary       Content-Type=application/json   Authorization=${token}
+
+    ${resp}=        Get Request     zp-api      /customers      headers=${headers}
+
+    [return]    ${resp}
+
+Get Unique Customer
+
+    [Arguments]         ${user_id}
+
+    Create Session      zp-api      ${base_api_url}
+
+    ${token}=       Get Session Token       
+    &{headers}=     Create Dictionary       Content-Type=application/json   Authorization=${token}
+
+    ${resp}=        Get Request     zp-api      /customers/${user_id}      headers=${headers}
+
+    [return]    ${resp}
+
 Delete Customer
 
     [Arguments]         ${cpf}
@@ -46,5 +82,6 @@ Delete Customer
     ${token}=           Get Session Token
     &{headers}=         Create Dictionary       content-type=application/json   authorization=${token}
     
-    Delete Request      ze-api      /customers/${cpf}     headers=${headers}
+    ${resp}=    Delete Request      ze-api      /customers/${cpf}     headers=${headers}
 
+    [return]        ${resp}

@@ -1,6 +1,6 @@
 ***Settings***
 
-Resource        ../../resources/services.robot
+Resource        ../../../resources/services.robot
 
 
 

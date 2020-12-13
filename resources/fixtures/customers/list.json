@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name":         "Robert Silva",
+            "cpf":          "013.178.989.66",
+            "address":       "Av. Six,12",
+            "phone_number": "(11)9.8845-5621"
+        },
+        {
+            "name":         "Prianca Rodden",
+            "cpf":          "011.148.129.23",
+            "address":       "Av. Five,12",
+            "phone_number": "(11)9.8888-8888"
+        },
+        {
+            "name":         "Jaque Araújo",
+            "cpf":          "954.336.989.21",
+            "address":       "Av. Twelve,12",
+            "phone_number": "(11)9.9418-5621"
+        },
+        {
+            "name":         "Marcelo Pereira",
+            "cpf":          "013.178.111.32",
+            "address":       "Av. Go to,14",
+            "phone_number": "(11)9.8845-9999"
+        }
+    ]
+}
