@@ -6,6 +6,7 @@ Resource        ../../resources/base.robot
 Suite Setup          Login Session
 #Execute one or more Keywords after execution of all steps of each test case
 Suite Teardown       Finish Session
+Test Teardown        Finish TestCase
 
 Test Template       Attempt Login 
 

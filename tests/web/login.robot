@@ -6,6 +6,7 @@ Resource        ../../resources/base.robot
 Suite Setup          Login Session
 
 Suite Teardown       Finish Session
+Test Teardown        Finish TestCase
 
 ***Test Cases***
 Admin Login
