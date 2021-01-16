@@ -17,6 +17,11 @@ pipeline {
                 sh  'robot -d ./logs tests/api'
                 
             }
+        stage('UI Test'){
+            steps{
+                sh  'robot -d ./logs tests/web'
+                
+            }
         }
     }
     post {

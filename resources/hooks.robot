@@ -1,7 +1,8 @@
 ***Keywords***
 
 Start Session
-    Open Browser        about:blank     chrome
+    Open Browser        about:blank     headlesschrome
+    Set Window Size     1024    768 
     Maximize Browser Window
 
 Finish Session
