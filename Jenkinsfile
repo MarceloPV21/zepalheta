@@ -2,7 +2,7 @@ pipeline {
     agent{
         docker{
             image 'python'
-            ars '--network=zepalheta-network'
+            args '--network=zepalheta-network'
         }
     }
 
