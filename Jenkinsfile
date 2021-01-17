@@ -25,7 +25,8 @@ pipeline {
     }
     post {
         always{
-            robot disableArchiveOutput: true, logFileName: '**/log.html', otherFiles: '**/*.png,**/*.jpg', outputFileName: '**/output.xml', outputPath: 'logs', reportFileName: '**/report.html' 
+            robot disableArchiveOutput: true, logFileName: '**/log.html', otherFiles: '**/*.png,**/*.jpg', outputFileName: '**/output.xml', outputPath: 'logs', reportFileName: '**/report.html'
+            chuckNorris() 
         }
     }
 }

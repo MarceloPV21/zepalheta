@@ -1,5 +1,7 @@
 ***Keywords***
 
+${browser} =    headless
+
 Start Session
     
     Run Keyword If      "${browser}" == "headless"
