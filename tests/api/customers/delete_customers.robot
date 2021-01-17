@@ -20,5 +20,5 @@ Delete Customer
 Customer Not Found
 
     ${resp}=        Delete Customer                     013.188.922-00
-    Status Should Be    405                             ${resp}
+    Status Should Be    404                             ${resp}
     Should Be Equal     ${resp.json()['message']}       Customer not found

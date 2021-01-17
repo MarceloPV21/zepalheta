@@ -1,8 +1,8 @@
 pipeline {
-    agent{
-        docker{
+    agent {
+        docker {
             image 'qaninja/python-wd'
-            args '--network=zepalheta-network'
+            args  '--network=zepalheta-network'
         }
     }
 
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('UI Tests'){
             steps{
-                  sh 'robot -d ./logs -v browser:headless tests/web'              
+                sh  'robot -d ./logs -v browser:headless tests/web'              
             }
         }
     }
