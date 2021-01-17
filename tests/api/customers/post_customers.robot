@@ -8,7 +8,7 @@ Resource        ../../../resources/services.robot
 New Customer
     
 
-    ${payload}          Get Json    /flea.json
+    ${payload}          Get Json    customers/flea.json
 
     Delete Customer     ${payload['cpf']}
 

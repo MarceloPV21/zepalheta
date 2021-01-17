@@ -7,7 +7,7 @@ Resource        ../../../resources/services.robot
 ***Test Cases***
 Update a Customer
 
-    ${payload}      Get Json    /slash.json
+    ${payload}      Get Json    customers//slash.json
 
     Delete Customer  ${payload['cpf']}
     ${resp}=    Post Customer             ${payload}

@@ -7,7 +7,7 @@ Resource        ../../../resources/services.robot
 ***Test Cases***
 Get Customer List
     
-    ${list}=        Get Json    /list.json
+    ${list}=        Get Json    customers/list.json
 
     FOR         ${item}         IN          @{list['data']}
             Log To Console      ${item}
@@ -22,7 +22,7 @@ Get Customer List
 
 Get Unique Customer
 
-    ${origin}=          Get Json        /unique.json
+    ${origin}=          Get Json        customers/unique.json
 
     Delete Customer     ${origin['cpf']}
     ${resp}=            Post Customer               ${origin}

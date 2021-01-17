@@ -78,6 +78,14 @@ And this customer should be displayed on list
     Wait Until Element Is Visible   ${CUSTOMER_LIST} 
     Table Should Contain            ${CUSTOMER_LIST}        ${formatted_cpf}
 
+Then I should see the texts about all required fields
+
+    Wait Until Page Contains     Nome é obrigatório         5
+    Wait Until Page Contains     CPF é obrigatório          5
+    Wait Until Page Contains     Endereço é obrigatório     5
+    Wait Until Page Contains     Telefone é obrigatório     5
+  
+
 #Remove Customer
 
 Given that I have an unwanted customer
@@ -102,3 +110,37 @@ When I remove this customer
 And this customer should not appear on list
 
     Wait Until Page Does Not Contain   ${formatted_cpf}       
+
+###Contracts Page
+
+Given I have the follow customer registered:    
+
+    [Arguments]     ${file_name}
+
+    ${customer}=     Get Json    customers/${file_name}
+
+    Delete Customer  ${customer['cpf']}
+
+    ${resp}=         Post Customer  ${customer}
+
+    Set Test Variable   ${customer}
+
+And this customer wants to rent the following equipo:   
+
+    [Arguments]     ${file_name}
+
+    ${equipo}=     Get Json    equipos/${file_name}
+
+    Post Equipo  ${equipo}
+
+    Set Test Variable   ${equipo}
+
+And acess the form contract page
+
+    Go to contracts
+    Click Element   ${CONTRACTS_FORM}
+
+When I make a new contract location
+
+    Create New Contract     ${customer['name']}     ${equipo['name']}
+   

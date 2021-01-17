@@ -85,3 +85,17 @@ Delete Customer
     ${resp}=    Delete Request      ze-api      /customers/${cpf}     headers=${headers}
 
     [return]        ${resp}
+
+#Post /equipos
+
+Post Equipo
+    [Arguments]     ${payload}
+
+    Create Session  ze-api                  ${base_api_url}
+
+    ${token}=           Get Session Token
+    &{headers}=         Create Dictionary       content-type=application/json   authorization=${token}
+    
+    ${resp}=            Post Request    ze-api      /equipos      data=${payload}     headers=${headers}
+
+    [return]            ${resp}

@@ -32,11 +32,12 @@ Duplicate Clients
 
 
 Required Fields
+    [Tags]      allrq
     Given I access the customer registration form
     And that I have the following client
     ...     ${EMPTY}     ${EMPTY}        ${EMPTY}       ${EMPTY}  
     When I include this client
-    Then I should see the notification:     Cliente cadastrado com sucesso!
+    Then I should see the texts about all required fields
 
 Name is Required
     [Tags]      required
