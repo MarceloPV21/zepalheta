@@ -10,6 +10,7 @@ Test Teardown        Finish TestCase
 
 ***Test Cases***
 Admin Login
+    [Tags]      smoke
     Access Login Page       
     Submit my credentials   ${admin_user}    ${admin_pass}
     Should I see logged area

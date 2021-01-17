@@ -12,6 +12,7 @@ Test Template       Attempt Login
 
 ***Keywords***
 Attempt Login
+    [Tags]      smoke
     [Arguments]     ${input_email}      ${input_password}      ${output_message}
 
     Access Login Page

@@ -13,7 +13,7 @@ Test Teardown        Finish TestCase
 ***Test Cases***
 
 New Clients
-    [Tags]      smoke
+    
     Given I access the customer registration form
     And that I have the following client
     ...     Bon Jovi    01317898214      Bug Street,1000     00000000001
@@ -22,7 +22,7 @@ New Clients
     And this customer should be displayed on list
 
 Duplicate Clients
-    [Tags]      dup
+    [Tags]      smoke
     Given I access the customer registration form
     And that I have the following client
     ...     Adrian Smith    01317898111      Bug Street,1000     00000000001
@@ -32,7 +32,7 @@ Duplicate Clients
 
 
 Required Fields
-    [Tags]      allrq
+    [Tags]      smoke
     Given I access the customer registration form
     And that I have the following client
     ...     ${EMPTY}     ${EMPTY}        ${EMPTY}       ${EMPTY}  
@@ -40,27 +40,27 @@ Required Fields
     Then I should see the texts about all required fields
 
 Name is Required
-    [Tags]      required
+    [Tags]      smoke
     [Template]      Fields Validation
     ${EMPTY}        01317898756    56          36413755    Nome é obrigatório
 
 Cpf is Required
-    [Tags]      required
+    [Tags]      smoke
     [Template]      Fields Validation
     Marcelo         ${EMPTY}       56          36413755    CPF é obrigatório
 
 Adress is Required
-    [Tags]      required
+    [Tags]      smoke
     [Template]      Fields Validation
     Marcelo             01317898756    ${EMPTY}    36413755    Endereço é obrigatório
 
 Phone is Required
-    [Tags]      required
+    [Tags]      smoke
     [Template]      Fields Validation
     Marcelo             01317898756    56          ${EMPTY}    Telefone é obrigatório
 
 Incorrect Phone
-    [Tags]      required
+    [Tags]      smoke
     [Template]      Fields Validation
     Marcelo             01317898245     56          3641554656      Telefone inválido       
 
